@@ -1,7 +1,46 @@
-const {test, expect} = require('@playwright/test');
+import { test, expect } from '@playwright/test';
 
-test('Home page', async ({page}) =>{
-    await page.goto('https://www.saucedemo.com/');
-    await expect(page).toHaveTitle(/Swag Labs/);
-})
-
+test('test', async ({ page }) => {
+  await page.goto('https://als.amalitech-dev.net/login');
+  await page.getByRole('button', { name: 'Sign in with Microsoft' }).click();
+  await page.goto('https://login.microsoftonline.com/b20a8f4d-0d6a-4f2e-83a2-181c968f8882/oauth2/v2.0/authorize?client_id=ea1c85c6-4a79-4682-846d-7d4e584eaf05&scope=user.read%20offline_access%20openid%20profile&redirect_uri=https%3A%2F%2Famalitech-sso.amalitech-dev.net%2Fredirect&client-request-id=0e88d16a-22d8-4f6e-9443-50c7dfb427d3&response_mode=query&response_type=code&x-client-SKU=msal.js.node&x-client-VER=2.6.0&x-client-OS=linux&x-client-CPU=x64&client_info=1&state=https://als.amalitech-dev.net/?path=dashboard&sso_reload=true');
+  await page.getByPlaceholder('someone@example.com').click();
+  await page.getByPlaceholder('someone@example.com').fill('sarah.owusu@amalitech.com');
+  await page.getByRole('button', { name: 'Next' }).click();
+  await page.getByPlaceholder('Password').click();
+  await page.getByPlaceholder('Password').click();
+  await page.getByPlaceholder('Password').press('CapsLock');
+  await page.getByPlaceholder('Password').fill('G');
+  await page.getByPlaceholder('Password').press('CapsLock');
+  await page.getByPlaceholder('Password').fill('Get1nl0k@24');
+  await page.getByRole('button', { name: 'Sign in' }).click();
+  await page.getByPlaceholder('Password').click();
+  await page.getByPlaceholder('Password').press('CapsLock');
+  await page.getByPlaceholder('Password').fill('G');
+  await page.getByPlaceholder('Password').press('CapsLock');
+  await page.getByPlaceholder('Password').fill('G3t1nl0k@24');
+  await page.getByRole('button', { name: 'Sign in' }).click();
+  await page.getByLabel('Don\'t ask again for 15 days').check();
+  await page.getByRole('link', { name: 'I can\'t use my Microsoft' }).click();
+  await page.getByRole('button', { name: 'Text +XXX XXXXXXXX00‎' }).click();
+  await page.locator('#lightbox').click();
+  await page.getByPlaceholder('Code').click();
+  await page.getByLabel('Back', { exact: true }).click();
+  await page.getByRole('button', { name: 'Text +XXX XXXXXXXX00‎' }).click();
+  await page.getByPlaceholder('Code').click();
+  await page.getByPlaceholder('Code').fill('108400');
+  await page.getByRole('button', { name: 'Verify' }).click();
+  await page.getByPlaceholder('Code').click();
+  await page.getByPlaceholder('Code').fill('');
+  await page.getByLabel('Don\'t ask again for 15 days').check();
+  await page.getByPlaceholder('Code').click();
+  await page.getByLabel('Back', { exact: true }).click();
+  await page.getByRole('button', { name: 'Text +XXX XXXXXXXX00‎' }).click();
+  await page.getByPlaceholder('Code').click();
+  await page.getByPlaceholder('Code').fill('557545');
+  await page.getByLabel('Don\'t ask again for 15 days').check();
+  await page.getByRole('button', { name: 'Verify' }).click();
+  await page.getByLabel('Back', { exact: true }).click();
+  await page.getByRole('button', { name: 'Text +XXX XXXXXXXX00‎' }).click();
+  await page.getByRole('button', { name: 'Cancel' }).click();
+});
